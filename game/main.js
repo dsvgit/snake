@@ -24,6 +24,8 @@ window.addEventListener('load', () => {
       this.snake = new Snake(this, { size: 20 })
       this.input = new InputHandler()
       this.food = new Food(this)
+
+      this.score = 0;
     }
 
     update() {
@@ -32,12 +34,17 @@ window.addEventListener('load', () => {
 
     draw(context) {
       this.snake.draw(context)
+      this.food.draw(context)
 
       if (this.snake.eat(this.food)) {
-        document.querySelector(".score").innerHTML = Number(document.querySelector(".score").innerHTML) + 100;
         this.food = new Food(game)
+        this.score = this.score + 1;
+        fps = fps + 0.2
+
+        document.querySelector(".score").innerHTML = String(this.score * 100);
       }
-      this.food.draw(context)
+
+
     }
   }
 

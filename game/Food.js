@@ -13,7 +13,8 @@ export class Food {
 }
 
 function randomCell(cols, rows, size) {
-  return [getRandomInt(0, cols) * size, getRandomInt(0, rows) * size]
+  // TODO: fix intervals
+  return [getRandomInt(1, cols - 1) * size, getRandomInt(1, rows - 1) * size]
 }
 
 function getRandomInt(min, max) {
