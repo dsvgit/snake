@@ -40,11 +40,10 @@ window.addEventListener('load', () => {
         this.food = new Food(game)
         this.score = this.score + 1;
         fps = fps + 0.2
+        interval = 1000/fps
 
         document.querySelector(".score").innerHTML = String(this.score * 100);
       }
-
-
     }
   }
 
